@@ -1,0 +1,115 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    text-align: center;
+}
+
+header nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+header nav a:hover {
+    text-decoration: underline;
+}
+
+main {
+    padding: 20px;
+    text-align: center;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+}
+/* Стили для списков <ul> и <ol> */
+ul, ol {
+    margin: 0;
+    padding: 0;
+    list-style-type: none; /* Убираем стандартные маркеры */
+}
+
+/* Стили для <li> */
+li {
+    margin: 5px 0; /* Отступы между пунктами списка */
+    padding: 10px; /* Внутренние отступы */
+    background-color: #f0f0f0; /* Фон для пунктов списка */
+    border-radius: 5px; /* Скругление углов */
+    font-size: 16px; /* Размер шрифта */
+    font-family: Arial, sans-serif; /* Шрифт */
+    color: #333; /* Цвет текста */
+}
+
+/* Стили для ссылок внутри <li> */
+li a {
+    text-decoration: none; /* Убираем подчеркивание ссылок */
+    color: #007BFF; /* Цвет ссылок */
+}
+
+li a:hover {
+    color: #0056b3; /* Цвет ссылки при наведении */
+}
+
+/* Пример для горизонтального меню */
+.navbar li {
+    display: inline-block; /* Пункты меню в одну строку */
+    margin: 0 15px;
+}
+/* Стили для формы */
+form {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f4f4f4;
+    border-radius: 10px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+button {
+    padding: 10px 15px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+}
+
+button:hover {
+    background-color: #555;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}

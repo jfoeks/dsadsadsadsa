@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block title %}Меню{% endblock %}
+
+{% block content %}
+<h1>Наше меню</h1>
+<ul>
+    {% for item in menu_items %}
+    <li>{{ item.name }} - {{ item.price }}</li>
+    {% endfor %}
+</ul>
+{% endblock %}
