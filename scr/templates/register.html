@@ -2,6 +2,11 @@
 
 {% block content %}
     <h2>Регистрация</h2>
+    {% if error_message %}
+        <div class="error" style="color: red;">
+            {{ error_message.message }}
+        </div>
+    {% endif %}
     <form method="POST">
         <div class="form-group">
             <label for="email">Email:</label>

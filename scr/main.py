@@ -42,12 +42,18 @@ async def register_page(request: Request):
     return templates.TemplateResponse("register.html", {"request": request})
 
 @app.post("/register", response_class=HTMLResponse)
-async def register(request: Request, name: str = Form(...), email: str = Form(...), password: str = Form(...), db: Session = Depends(get_db)):
+async def register(request: Request, email: str = Form(...), password: str = Form(...), db: Session = Depends(get_db)):
     hashed_password = bcrypt.hashpw(password.encode("utf-8"), bcrypt.gensalt())
-    client = Client(name=name, email=email, hashed_password=hashed_password.decode("utf-8"))
-    db.add(client)
-    db.commit()
-    return RedirectResponse("/", status_code=303)
+    client = Client(email=email, hashed_password=hashed_password.decode("utf-8"))
+    try:
+        db.add(client)
+        db.commit()
+        return RedirectResponse("/", status_code=303)
+    except:
+        error_message={
+            "message":'Такой пользователь уже существует'
+        }
+        return templates.TemplateResponse("register.html", {"request": request,'error_message':error_message})
 
 @app.get("/login", response_class=HTMLResponse)
 async def login_page(request: Request):
